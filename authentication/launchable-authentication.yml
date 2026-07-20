@@ -1,0 +1,36 @@
+generated: '2026-07-19'
+method: searched
+source: https://help.launchableinc.com/resources/cli-reference/
+docs: https://help.launchableinc.com/sending-data-to-launchable/using-the-launchable-cli/getting-started/
+note: Launchable publishes no OpenAPI, so this profile is searched from the CLI/getting-started
+  documentation rather than derived from securitySchemes.
+summary:
+  types:
+  - apiKey
+  - openIdConnect
+  api_key_in:
+  - environment
+  oauth2_flows: []
+schemes:
+- name: LAUNCHABLE_TOKEN
+  type: apiKey
+  in: environment
+  parameter_name: LAUNCHABLE_TOKEN
+  description: Workspace API key issued from the Launchable web app and supplied to the CLI as an
+    environment variable. The CLI presents it to the service on every request.
+  example_usage: export LAUNCHABLE_TOKEN=your_API_key
+  scope: workspace
+  docs: https://help.launchableinc.com/resources/cli-reference/
+- name: GitHub OIDC
+  type: openIdConnect
+  description: Keyless authentication for GitHub Actions workflows using GitHub's OIDC identity
+    token in place of a long-lived LAUNCHABLE_TOKEN.
+  docs: https://help.launchableinc.com/sending-data-to-launchable/using-the-launchable-cli/getting-started/migration-to-github-oidc-auth/
+  status: recommended
+verification:
+  command: launchable verify
+  description: Confirms CLI authentication and connectivity to the Launchable service.
+scopes:
+  documented: false
+  note: No OAuth scope surface is published; authorization is workspace-bound by the API key or
+    OIDC subject. scopes/ is intentionally not produced.
