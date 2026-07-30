@@ -1,23 +1,145 @@
 aid: launchable
 name: Launchable
-description: Launchable is a company surfaced as a portfolio company of battery-ventures and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: 'Launchable is a software development intelligence platform for continuous integration
+  that applies machine learning to CI and test data to speed up software delivery. Its flagship
+  capability, Predictive Test Selection, records builds, test sessions and test results from a
+  team''s CI pipeline and returns a prioritized subset of tests most likely to fail for a given
+  change, letting teams run a fraction of a suite while retaining most of its failure-detection
+  power. The platform also provides test suite parallelization, flaky/unhealthy test detection,
+  trends and test reporting, and Slack and GitHub notifications. Access is CLI-mediated: the
+  open-source Launchable CLI (now the CloudBees Smart Tests CLI) wraps the service REST API and
+  integrates with more than twenty test runners and build tools across Java, Python, Ruby, Go,
+  JavaScript, .NET and Perl. Launchable was founded by Jenkins creator Kohsuke Kawaguchi and is
+  now part of CloudBees, where the product ships as CloudBees Smart Tests.'
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/695e1939655d6c0175b126da/69a531b363ec7c7abb4b8a30_OG-Smart-Tests.png
 url: https://raw.githubusercontent.com/api-evangelist/launchable/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - battery-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profile
+x-tier-reason: enriched
+x-acquired-by: cloudbees
+x-product-name: CloudBees Smart Tests
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Continuous Integration
+- Testing
+- Test Automation
+- Developer Tools
+- DevOps
+- Machine Learning
+- Software Delivery
+- Predictive Test Selection
+- CI/CD
+apis:
+- aid: launchable:launchable-api
+  name: Launchable API
+  description: The Launchable (CloudBees Smart Tests) service API that the Launchable CLI calls to
+    record builds, create test sessions, upload test results, request predictive test subsets and
+    split subsets for parallel execution. The service is consumed through the first-party CLI
+    rather than a published REST reference; the host is documented via the LAUNCHABLE_BASE_URL
+    environment variable and the restricted-network allowlist guidance.
+  humanURL: https://help.launchableinc.com/resources/cli-reference/
+  baseURL: https://api.mercury.launchableinc.com
+  tags:
+  - Testing
+  - Continuous Integration
+  - Test Selection
+  properties:
+  - url: https://help.launchableinc.com/resources/cli-reference/
+    type: Documentation
+  - url: https://help.launchableinc.com/getting-started/
+    type: GettingStarted
+  - url: https://help.launchableinc.com/sending-data-to-launchable/using-the-launchable-cli/getting-started/
+    type: Quickstart
+  - url: authentication/launchable-authentication.yml
+    type: Authentication
+  - url: conventions/launchable-conventions.yml
+    type: Conventions
+common:
+- url: https://www.cloudbees.com/capabilities/cloudbees-smart-tests
+  type: Website
+- url: https://help.launchableinc.com/
+  type: DeveloperPortal
+- url: https://help.launchableinc.com/
+  type: Documentation
+- url: https://help.launchableinc.com/resources/cli-reference/
+  type: APIReference
+- url: https://help.launchableinc.com/getting-started/
+  type: GettingStarted
+- url: https://docs.cloudbees.com/docs/cloudbees-smart-tests/latest/
+  type: ProductDocumentation
+- url: https://github.com/launchableinc
+  type: GitHubOrganization
+- url: https://www.cloudbees.com/blog
+  type: Blog
+- url: https://support.cloudbees.com/hc/en-us
+  type: Support
+- url: https://www.cloudbees.com/pricing
+  type: Pricing
+- url: https://app.launchableinc.com/signup
+  type: SignUp
+- url: https://app.launchableinc.com/
+  type: Login
+- url: https://www.cloudbees.com/legal/privacy-policy
+  type: PrivacyPolicy
+- url: packages/launchable-packages.yml
+  type: Packages
+- url: cli/launchable-cli.yml
+  type: CLI
+- url: well-known/launchable-well-known.yml
+  type: WellKnown
+- url: well-known/launchable-security.txt
+  type: SecurityTxt
+- url: llms/launchable-llms.txt
+  type: LLMsTxt
+- url: conformance/launchable-conformance.yml
+  type: Conformance
+- url: https://www.cloudbees.com/company/trust-center
+  type: Compliance
+- url: security/launchable-trust-center.yml
+  type: TrustCenter
+- url: security/launchable-domain-security.yml
+  type: DomainSecurity
+- url: security/launchable-vulnerability-disclosure.yml
+  type: VulnerabilityDisclosure
+- url: https://www.cloudbees.com/legal/security-policy
+  type: Security
+- url: lifecycle/launchable-lifecycle.yml
+  type: Lifecycle
+- url: https://www.cloudbeesstatus.com/
+  type: StatusPage
+- url: changelog/launchable-changelog.yml
+  type: ChangeLog
+- url: conventions/launchable-conventions.yml
+  type: Conventions
+- url: authentication/launchable-authentication.yml
+  type: Authentication
+- url: sandbox/launchable-sandbox.yml
+  type: Sandbox
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
