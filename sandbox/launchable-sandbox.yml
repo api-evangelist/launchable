@@ -1,0 +1,39 @@
+generated: '2026-07-19'
+method: searched
+source: https://help.launchableinc.com/resources/cli-reference/
+note: Launchable publishes no separate sandbox environment, test credentials or magic test values.
+  What it does publish is a dry-run mode and a connectivity verification command, plus a hosted web
+  console. Nothing here is invented; absent facilities are recorded as published=false.
+console:
+  url: https://app.launchableinc.com/
+  signup: https://app.launchableinc.com/signup
+  description: Hosted web app where workspaces, API keys, subsets, trends and test reports are
+    managed and inspected.
+test_mode:
+  published: true
+  mechanism: dry-run flag
+  flag: --dry-run
+  description: Runs any CLI command end to end without sending data to the Launchable service,
+    printing what would have been transmitted.
+  scope: all CLI commands
+verification:
+  command: launchable verify
+  description: Verifies CLI installation, authentication and connectivity to the service before a
+    real run.
+observability:
+  flag: --log-level audit
+  description: Prints the HTTP requests the CLI makes, so a run can be inspected without a sandbox
+    tenant.
+separate_test_environment:
+  published: false
+test_credentials:
+  published: false
+magic_test_values:
+  published: false
+time_simulation:
+  published: false
+isolation_guidance:
+  mechanism: workspace
+  description: Separate workspaces isolate data sets; a scratch workspace is the documented way to
+    experiment without polluting production models.
+  docs: https://help.launchableinc.com/concepts/workspace/

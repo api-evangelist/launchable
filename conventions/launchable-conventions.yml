@@ -1,0 +1,66 @@
+generated: '2026-07-19'
+method: searched
+source: https://help.launchableinc.com/resources/cli-reference/
+note: Launchable publishes no REST reference, so these conventions describe the documented,
+  CLI-mediated contract only. Anything the provider does not publish is recorded as
+  documented=false rather than assumed.
+access_model:
+  style: cli-mediated
+  description: The service API is consumed through the first-party CLI. No public REST reference,
+    OpenAPI, GraphQL or AsyncAPI document is published.
+  base_url: https://api.mercury.launchableinc.com
+  base_url_override:
+    env: LAUNCHABLE_BASE_URL
+    stable_ip_host: https://api-static.mercury.launchableinc.com
+    docs: https://help.launchableinc.com/sending-data-to-launchable/using-the-launchable-cli/recording-builds-with-the-launchable-cli/running-under-restricted-networks/
+authentication:
+  style: api-key
+  transport: environment variable consumed by the CLI (LAUNCHABLE_TOKEN)
+  alternative: GitHub OIDC for GitHub Actions
+  see: authentication/launchable-authentication.yml
+idempotency:
+  documented: false
+  header: null
+  note: No idempotency key or retry-safety contract is documented. No Idempotency pointer is
+    emitted in apis.yml.
+pagination:
+  documented: false
+field_expansion:
+  documented: false
+metadata:
+  supported: true
+  mechanism: flavors
+  description: Arbitrary key/value "flavors" tag a test session so subsets can be tailored per
+    environment.
+  docs: https://help.launchableinc.com/sending-data-to-launchable/using-the-launchable-cli/recording-test-results-with-the-launchable-cli/use-flavors-to-run-the-best-tests-for-an-environment/
+request_tracing:
+  documented: false
+  observability: '--log-level audit on the CLI prints the underlying HTTP calls.'
+versioning:
+  api: not publicly versioned
+  cli: semantic versioning; the 1.x launchable line was renumbered to the 2.x smart-tests-cli line
+  see: lifecycle/launchable-lifecycle.yml
+error_envelope:
+  documented: false
+  note: Errors surface as CLI exit codes and messages; no published problem/error schema, so no
+    errors/ artifact is produced.
+rate_limits:
+  documented: false
+object_model:
+  docs: https://help.launchableinc.com/concepts/object-model/
+  entities:
+  - organization
+  - workspace
+  - build
+  - test session
+  - branch
+  - subset
+  - insight
+tls:
+  required: true
+  opt_out_flag: --skip-cert-verification
+cross_links:
+  authentication: authentication/launchable-authentication.yml
+  lifecycle: lifecycle/launchable-lifecycle.yml
+  cli: cli/launchable-cli.yml
+  sandbox: sandbox/launchable-sandbox.yml

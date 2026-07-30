@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/launchableinc/cli/releases.atom
+url: https://github.com/launchableinc/cli/releases
+note: Launchable publishes no product changelog or release-notes page on the docs site. The dated
+  release feed for the first-party CLI repository is the change record captured here. Versions and
+  dates are verbatim from the GitHub releases feed and PyPI upload timestamps; release highlights
+  are not summarized because the feed entries were not individually fetched.
+scheme: semver
+lines:
+- package: smart-tests-cli
+  current: 2.12.6
+  status: current
+- package: launchable
+  current: 1.124.4
+  status: superseded
+entries:
+- version: v2.12.6
+  date: '2026-07-17'
+  line: smart-tests-cli
+- version: v2.12.5
+  date: '2026-07-10'
+  line: smart-tests-cli
+- version: v2.12.4
+  date: '2026-06-26'
+  line: smart-tests-cli
+- version: v2.12.3
+  date: '2026-06-24'
+  line: smart-tests-cli
+- version: v2.12.2
+  date: '2026-06-16'
+  line: smart-tests-cli
+- version: v1.124.4
+  date: '2026-06-16'
+  line: launchable
+- version: v2.12.1
+  date: '2026-06-15'
+  line: smart-tests-cli
+- version: v1.124.3
+  date: '2026-06-15'
+  line: launchable
+- version: v2.12.0
+  date: '2026-06-08'
+  line: smart-tests-cli
+- version: v2.11.2
+  date: '2026-06-08'
+  line: smart-tests-cli
+breaking_changes:
+- version: 2.0.0
+  description: Package renamed from launchable to smart-tests-cli; console entry point renamed
+    from launchable to smart-tests; minimum Python raised to 3.13.
+  evidence: https://github.com/launchableinc/cli/blob/main/pyproject.toml

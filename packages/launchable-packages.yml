@@ -1,0 +1,80 @@
+generated: '2026-07-19'
+method: searched
+source: https://pypi.org/project/launchable/ ; https://pypi.org/project/smart-tests-cli/ ;
+  https://github.com/launchableinc
+note: Launchable ships no server-side or language client SDK. Its distributed packages are the
+  first-party CLI (which wraps the service API), CI plugins/actions, and an IDE extension. No
+  Packages entry is marked as an SDK, and no SDKs pointer is emitted in apis.yml, because none of
+  these are client libraries for the API.
+packages:
+- language: python
+  registry: pypi
+  name: launchable
+  kind: cli
+  url: https://pypi.org/project/launchable/
+  install: pip3 install --user --upgrade launchable
+  version: 1.124.4
+  released: '2026-06-16'
+  releases: 316
+  license: Apache-2.0
+  official: true
+  status: superseded
+  superseded_by: smart-tests-cli
+- language: python
+  registry: pypi
+  name: smart-tests-cli
+  kind: cli
+  url: https://pypi.org/project/smart-tests-cli/
+  install: pip3 install --user --upgrade smart-tests-cli
+  binary: smart-tests
+  version: 2.12.5
+  released: '2026-07-17'
+  releases: 33
+  license: Apache-2.0
+  repository: https://github.com/launchableinc/cli
+  homepage: https://www.cloudbees.com/capabilities/cloudbees-smart-tests
+  official: true
+  status: current
+  note: The renamed continuation of the launchable CLI; requires Python >= 3.13.
+- language: yaml
+  registry: github-actions
+  name: launchableinc/record-build-and-test-results-action
+  kind: ci-action
+  url: https://github.com/launchableinc/record-build-and-test-results-action
+  license: Apache-2.0
+  official: true
+- language: yaml
+  registry: github-actions
+  name: launchableinc/smart-tests-results-upload-action
+  kind: ci-action
+  url: https://github.com/launchableinc/smart-tests-results-upload-action
+  license: Apache-2.0
+  official: true
+- language: java
+  registry: github
+  name: launchableinc/jenkins-plugin
+  kind: ci-plugin
+  url: https://github.com/launchableinc/jenkins-plugin
+  license: MIT
+  official: true
+- language: typescript
+  registry: vscode-marketplace
+  name: naotoono.vscode-launchable
+  kind: ide-extension
+  url: https://marketplace.visualstudio.com/items?itemName=naotoono.vscode-launchable
+  official: false
+  note: Documented by Launchable as "the Launchable extension for Visual Studio Code" but
+    published under an individual publisher account, so not marked first-party.
+registries_probed:
+- npm
+- pypi
+- github-actions
+- vscode-marketplace
+registries_no_first_party_result:
+- npm
+- maven-central
+- nuget
+- rubygems
+- packagist
+- crates.io
+- pkg.go.dev

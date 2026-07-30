@@ -1,0 +1,81 @@
+generated: '2026-07-19'
+method: searched
+source: https://www.cloudbees.com/company/trust-center
+note: Launchable is operated by CloudBees as CloudBees Smart Tests. The compliance programme is
+  CloudBees'; SOC 2 Type II is named for Smart Tests specifically. Cross-cutting API standards are
+  asserted false where the provider publishes no evidence, because there is no OpenAPI to derive
+  from.
+compliance_program:
+  operator: CloudBees
+  url: https://www.cloudbees.com/company/trust-center
+  attestation_portal: https://trust.cloudbees.com/
+certifications:
+- id: soc2-type-ii
+  name: SOC 2 Type II
+  conforms: true
+  evidence: Trust Center lists SOC 2 Type II for CloudBees Unify and Smart Tests
+  scope: CloudBees Smart Tests
+- id: iso-27001
+  name: ISO/IEC 27001:2022
+  conforms: true
+  evidence: Trust Center — CloudBees ISMS and CloudBees Unify certified
+- id: iso-27017
+  name: ISO/IEC 27017:2015
+  conforms: true
+  evidence: Trust Center — cloud-specific security controls certified
+- id: iso-27018
+  name: ISO/IEC 27018:2025
+  conforms: true
+  evidence: Trust Center — public-cloud PII protection certified
+- id: csa-star
+  name: Cloud Security Alliance STAR
+  conforms: true
+  evidence: Trust Center — listed on the CSA STAR registry
+- id: nist-csf-2.0
+  name: NIST Cybersecurity Framework 2.0
+  conforms: true
+  evidence: Trust Center — compliance demonstrated through independent audits
+- id: gdpr
+  name: GDPR
+  conforms: true
+  evidence: Trust Center — external audits verify GDPR compliance
+- id: ccpa
+  name: CCPA
+  conforms: true
+  evidence: Trust Center — independent assessments verify CCPA compliance
+- id: dora
+  name: Digital Operational Resilience Act (DORA)
+  conforms: partial
+  evidence: Trust Center — supports financial-services customers meeting DORA requirements
+- id: sig
+  name: Standardized Information Gathering (SIG)
+  conforms: true
+  evidence: Trust Center — products undergo routine SIG risk assessments
+standards:
+- id: oauth2
+  conforms: false
+  evidence: no OAuth surface documented; authentication is an API key
+- id: oidc
+  conforms: true
+  evidence: GitHub OIDC accepted for keyless CI authentication
+  scope: inbound workload identity only, not end-user OIDC
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: no error schema published
+- id: openapi
+  conforms: false
+  evidence: no OpenAPI document published
+- id: asyncapi
+  conforms: false
+  evidence: no event or streaming surface published
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: operator publishes a PGP-signed security.txt at
+    https://www.cloudbees.com/.well-known/security.txt
+- id: junit-xml
+  conforms: true
+  evidence: test results are ingested in JUnit XML format; the CLI documents conversion of other
+    report formats to JUnit
+- id: semver
+  conforms: true
+  evidence: CLI releases follow semantic versioning

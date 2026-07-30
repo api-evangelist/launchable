@@ -1,0 +1,107 @@
+generated: '2026-07-19'
+method: searched
+source: https://help.launchableinc.com/resources/cli-reference/
+repository: https://github.com/launchableinc/cli
+license: Apache-2.0
+names:
+- name: launchable
+  binary: launchable
+  package: launchable
+  status: superseded
+- name: CloudBees Smart Tests CLI
+  binary: smart-tests
+  package: smart-tests-cli
+  status: current
+install:
+- method: pip
+  command: pip3 install --user --upgrade launchable
+  package: launchable
+- method: pip
+  command: pip3 install --user --upgrade smart-tests-cli
+  package: smart-tests-cli
+- method: docker
+  docs: https://help.launchableinc.com/sending-data-to-launchable/using-the-launchable-cli/getting-started/using-the-cli-with-docker-image/
+requirements:
+  python: '>=3.6 (launchable); >=3.13 (smart-tests-cli)'
+  java: '>=8'
+authentication:
+  env: LAUNCHABLE_TOKEN
+  alternative: GitHub OIDC
+  see: authentication/launchable-authentication.yml
+commands:
+- group: record
+  description: Send build, session, commit, test-result and attachment data to the service.
+  subcommands:
+  - name: record build
+    description: Create a build record with Git commit information.
+  - name: record session
+    description: Start a test session for a build.
+  - name: record tests
+    description: Upload test results from a test runner.
+  - name: record commit
+    description: Manually record Git commits (normally automatic).
+  - name: record attachment
+    description: Attach log files to a test session.
+- group: subset
+  description: Predictive Test Selection.
+  subcommands:
+  - name: subset
+    description: Request a prioritized subset of tests ranked by predicted failure risk.
+  - name: split-subset
+    description: Divide a subset into chunks for parallel execution.
+- group: inspect
+  description: Inspect what was recorded or returned.
+  subcommands:
+  - name: inspect subset
+    description: View subset detail including per-test rankings.
+  - name: inspect tests
+    description: Examine uploaded test result detail.
+- group: stats
+  subcommands:
+  - name: stats test-sessions
+    description: Retrieve test session statistics.
+- group: verify
+  subcommands:
+  - name: verify
+    description: Confirm CLI authentication and service connectivity.
+global_options:
+- flag: --dry-run
+  description: Simulate a command without sending data to the server.
+- flag: --log-level
+  description: Control output verbosity; --log-level audit prints the HTTP calls made.
+- flag: --plugins
+  description: Point at custom profile directories for unsupported test runners.
+- flag: --skip-cert-verification
+  description: Disable TLS certificate verification.
+environment:
+- name: LAUNCHABLE_TOKEN
+  description: Workspace API key.
+- name: LAUNCHABLE_BASE_URL
+  description: Override the service base URL; documented for restricted-network use with
+    https://api-static.mercury.launchableinc.com
+test_runners_supported:
+- adb
+- ant
+- bazel
+- behave
+- ctest
+- cucumber
+- cypress
+- dotnet test
+- go test
+- gradle
+- jasmine
+- jest
+- karma
+- maven
+- minitest
+- playwright
+- prove
+- pytest
+- robot
+- rspec
+- vitest
+- xctest
+fallback_profiles:
+- file profile for unsupported test runners
+- raw profile for custom test runners

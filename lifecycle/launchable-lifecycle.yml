@@ -1,0 +1,52 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/launchableinc/cli/releases ; https://pypi.org/project/launchable/ ;
+  https://www.cloudbeesstatus.com/
+versioning:
+  api:
+    scheme: unversioned
+    note: No public API version scheme is published; the service is reached through the CLI.
+  cli:
+    scheme: semver
+    lines:
+    - package: launchable
+      current: 1.124.4
+      released: '2026-06-16'
+      status: superseded
+    - package: smart-tests-cli
+      current: 2.12.6
+      released: '2026-07-17'
+      status: current
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: unknown
+  observed_transitions:
+  - what: Product rebrand
+    from: Launchable
+    to: CloudBees Smart Tests
+    evidence: launchableinc.com returns HTTP 308 to
+      https://www.cloudbees.com/capabilities/cloudbees-smart-tests
+  - what: CLI package rename
+    from: launchable (PyPI, 1.x)
+    to: smart-tests-cli (PyPI, 2.x, binary smart-tests)
+    evidence: https://github.com/launchableinc/cli/blob/main/pyproject.toml
+  - what: Auth migration
+    from: long-lived LAUNCHABLE_TOKEN in GitHub Actions
+    to: GitHub OIDC
+    evidence: https://help.launchableinc.com/sending-data-to-launchable/using-the-launchable-cli/getting-started/migration-to-github-oidc-auth/
+  note: These are observed transitions, not a published deprecation policy. No Deprecation pointer
+    is emitted in apis.yml because the provider publishes no deprecation-policy page.
+sla:
+  url: null
+  uptime_target: null
+  published: false
+status_page: https://www.cloudbeesstatus.com/
+status_page_note: Operated by CloudBees; https://status.cloudbees.com/ redirects here. No
+  Launchable-branded status page exists.
+docs_lifecycle:
+  legacy_docs: https://help.launchableinc.com/
+  current_docs: https://docs.cloudbees.com/docs/cloudbees-smart-tests/latest/
+  note: The Launchable help site remains live and is still the CLI reference the CLI README points
+    at; CloudBees docs carry the rebranded product documentation.
+deprecated_operations: []

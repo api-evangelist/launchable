@@ -1,0 +1,75 @@
+generated: '2026-07-19'
+method: searched
+source: live probe of /.well-known/ paths on Launchable and CloudBees hosts
+note: Launchable-branded hosts publish no /.well-known/ discovery documents. The only document
+  found is the RFC 9116 security.txt published by CloudBees, which now operates Launchable as
+  CloudBees Smart Tests; it is saved here as launchable-security.txt with its origin recorded.
+hosts:
+- host: https://help.launchableinc.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://app.launchableinc.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 301
+    note: redirect to trailing-slash variant; SPA catch-all, no document served
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    note: redirect to trailing-slash variant; SPA catch-all, no document served
+  - path: /.well-known/api-catalog
+    status: 301
+    note: redirect to trailing-slash variant; SPA catch-all, no document served
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api.mercury.launchableinc.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://api-static.mercury.launchableinc.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: https://www.cloudbees.com
+  operator: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: launchable-security.txt
+    source: https://www.cloudbees.com/.well-known/security.txt
+    format: RFC 9116
+    pgp_signed: true
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
