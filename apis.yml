@@ -11,6 +11,17 @@ description: 'Launchable is a software development intelligence platform for con
   integrates with more than twenty test runners and build tools across Java, Python, Ruby, Go,
   JavaScript, .NET and Perl. Launchable was founded by Jenkins creator Kohsuke Kawaguchi and is
   now part of CloudBees, where the product ships as CloudBees Smart Tests.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
