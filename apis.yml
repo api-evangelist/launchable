@@ -56,7 +56,7 @@ tags:
 - Test Automation
 - Developer Tools
 - DevOps
-- Machine-Learning
+- Machine Learning
 - Software Delivery
 - Predictive Test Selection
 - CI/CD
@@ -71,6 +71,7 @@ tags_raw:
 - Software Delivery
 - Predictive Test Selection
 - CI/CD
+- Machine-Learning
 apis:
 - aid: launchable:launchable-api
   name: Launchable API
