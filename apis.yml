@@ -98,6 +98,8 @@ apis:
   - url: conventions/launchable-conventions.yml
     type: Conventions
 common:
+- type: Plans
+  url: plans/launchable-plans-pricing.yml
 - url: https://www.cloudbees.com/capabilities/cloudbees-smart-tests
   type: Website
 - url: https://help.launchableinc.com/
