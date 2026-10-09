@@ -1,0 +1,34 @@
+# Front Door AI Index — launchable — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: launchable
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.cloudbees.com
+  final_host: www.cloudbees.com
+  ownership: shared
+  owner: cloudbees
+  shares_host_with:
+  - cloudbees
+  inherited_from: null
+  alias_of: null
+  verdict: scored
+  score: null
+  band: null
+  band_label: null
+  host_score: 24
+  density: null
+  words: 920
+  tiers:
+    agentic: 11
+    core: 13
+    model: 0
+  ambiguous: 5
+  top_terms:
+    AI: 13
+    agentic: 10
+    automation: 3
+    agent: 1
+    embedding: 1
+    intelligence: 1
